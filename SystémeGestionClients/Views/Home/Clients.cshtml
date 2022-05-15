@@ -1,0 +1,46 @@
+﻿@using SystémeGestionClients.Models
+@model Client
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Formulaire Client</title>
+        </head>
+        <body>
+          <form method="post" >
+            <fieldset>
+              <legend>Ajouter Client</legend>
+              <div>
+                <label for="NomC">Nom et prénom:</label>
+                <input type="text" name="NomC" value="" />
+              </div>
+              <div>
+                <label for="typeC">Type:</label>
+                @Html.DropDownListFor(c => c.typeC, 
+            new SelectList(Enum.GetValues(typeof(TypeC))), 
+            "Choix type")
+
+              </div>
+              <div>
+                <label for="Adresse.rue">Rue:</label>
+                <input type="text" name="Adresse.rue" value="" />
+                <label for="Adresse.Ville">Ville:</label>
+                <input type="text" name="Adresse.ville" value="" />
+              </div>
+              <div>
+                <label for="Adresse.pays">Pays:</label>
+                <input type="text" name="Adresse.pays" value="" />
+              </div>
+              <div>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="submit" value="Ajouter" class="submit" />
+              </div>
+            </fieldset>
+          </form>
+        </body>
+    </html>
+}
